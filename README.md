@@ -1,25 +1,19 @@
 # atividade-M3S2-decorator
 def decorator_imprimir(funcao):
-    def wrapper(capital, taxa, tempo):
-        resultado = funcao(capital, taxa, tempo)
-        print("Parâmetros:")
-        print(f"Capital: {capital}")
-        print(f"Taxa: {taxa}")
-        print(f"Tempo: {tempo}")
-        print(f"Resultado: {resultado}")
-        return resultado
-    return wrapper
+    def mostrar_na_tela(*args, **kwargs):
+     capital, taxa, tempo = args
+        resultado = funcao(*args, **kwargs):
+        return print(f"Capital: {capital}")
+        (Taxa:{taxa},(Tempo: {tempo}"),
+    (f"Resultado: {resultado}")
+      return mostrar_na_tela
 
-class CalculadoraJuros:
-    @staticmethod
+
     @decorator_imprimir
-    def calcular_juros(capital, taxa, tempo):
-        juros = capital * taxa * tempo
-        return juros
+    def juros_simples(capital, taxa, tempo):
+        return capital * (taxa/100) * tempo
+       capital = 1000.0
+       taxa= 6.0
+       tempo = 10.0
 
-# Utilização da classe CalculadoraJuros
-capital = float(input("Digite o valor do capital: "))
-taxa = float(input("Digite o valor da taxa: "))
-tempo = float(input("Digite o valor do tempo: "))
-
-CalculadoraJuros.calcular_juros(capital, taxa, tempo)
+juros_simples(capital , taxa, tempo)
